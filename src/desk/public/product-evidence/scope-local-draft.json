@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "id": "cb370726-7e26-46ad-b3d9-f7ecedeba121",
+  "createdAt": "2026-10-04T15:57:28.104Z",
+  "title": "Synthetic website expansion",
+  "quote": {
+    "version": 1,
+    "id": "synthetic-website",
+    "currency": "USD",
+    "minorUnitDigits": 2,
+    "items": [
+      {
+        "id": "pages",
+        "description": "Website pages",
+        "quantity": 3,
+        "unitRateMinor": 20000,
+        "rateApprovalRef": "Synthetic agreed quote, page rate"
+      }
+    ],
+    "agreedDeadline": {
+      "text": "Two weeks after content handoff",
+      "sourceRef": "Synthetic quote, timeline paragraph"
+    }
+  },
+  "request": {
+    "version": 1,
+    "id": "synthetic-change",
+    "quoteId": "synthetic-website",
+    "changes": [
+      {
+        "action": "set_quantity",
+        "itemId": "pages",
+        "sourceRef": "Synthetic client email: please make this five pages",
+        "quantity": 5
+      },
+      {
+        "action": "add",
+        "itemId": "checkout",
+        "sourceRef": "Synthetic client email: add checkout",
+        "quantity": 1,
+        "description": "Checkout feature",
+        "unitRateMinor": 35000,
+        "rateApprovalRef": "Synthetic owner rate for landing capture only"
+      }
+    ],
+    "deadlineQuestions": [
+      "Does the expanded scope require a new deadline?"
+    ]
+  },
+  "sources": {
+    "quoteSource": "Synthetic website quote — invented example",
+    "changeSource": "Synthetic change email — invented example"
+  },
+  "revision": {
+    "version": 1,
+    "status": "draft_for_review",
+    "quoteId": "synthetic-website",
+    "requestId": "synthetic-change",
+    "currency": "USD",
+    "minorUnitDigits": 2,
+    "originalItems": [
+      {
+        "id": "pages",
+        "description": "Website pages",
+        "quantity": 3,
+        "unitRateMinor": 20000,
+        "rateApprovalRef": "Synthetic agreed quote, page rate",
+        "amountMinor": 60000
+      }
+    ],
+    "originalTotalMinor": 60000,
+    "revisedItems": [
+      {
+        "id": "pages",
+        "description": "Website pages",
+        "quantity": 5,
+        "unitRateMinor": 20000,
+        "rateApprovalRef": "Synthetic agreed quote, page rate",
+        "amountMinor": 100000
+      },
+      {
+        "id": "checkout",
+        "description": "Checkout feature",
+        "quantity": 1,
+        "unitRateMinor": 35000,
+        "amountMinor": 35000,
+        "rateApprovalRef": "Synthetic owner rate for landing capture only"
+      }
+    ],
+    "changes": [
+      {
+        "action": "set_quantity",
+        "itemId": "pages",
+        "sourceRef": "Synthetic client email: please make this five pages",
+        "before": {
+          "id": "pages",
+          "description": "Website pages",
+          "quantity": 3,
+          "unitRateMinor": 20000,
+          "rateApprovalRef": "Synthetic agreed quote, page rate",
+          "amountMinor": 60000
+        },
+        "after": {
+          "id": "pages",
+          "description": "Website pages",
+          "quantity": 5,
+          "unitRateMinor": 20000,
+          "rateApprovalRef": "Synthetic agreed quote, page rate",
+          "amountMinor": 100000
+        }
+      },
+      {
+        "action": "add",
+        "itemId": "checkout",
+        "sourceRef": "Synthetic client email: add checkout",
+        "before": null,
+        "after": {
+          "id": "checkout",
+          "description": "Checkout feature",
+          "quantity": 1,
+          "unitRateMinor": 35000,
+          "amountMinor": 35000,
+          "rateApprovalRef": "Synthetic owner rate for landing capture only"
+        }
+      }
+    ],
+    "knownSubtotalMinor": 135000,
+    "knownDeltaMinor": 75000,
+    "totalMinor": 135000,
+    "deltaMinor": 75000,
+    "pricingQuestions": [],
+    "pricingResolved": true,
+    "agreedDeadline": {
+      "text": "Two weeks after content handoff",
+      "sourceRef": "Synthetic quote, timeline paragraph"
+    },
+    "deadlineQuestions": [
+      "Does the expanded scope require a new deadline?"
+    ],
+    "scheduleStatus": "not_validated",
+    "clientApproval": "not_recorded"
+  },
+  "markdown": "# Website scope revision\n\n**Draft for owner review. Client approval has not been recorded.**\n\nThis document uses manually structured inputs and deterministic arithmetic. No model interpreted a client message. Rate approval references below were supplied by the user and have not been independently verified.\n\nOriginal quote: synthetic-website · Synthetic website quote — invented example\nChange request: synthetic-change · Synthetic change email — invented example\n\n## Price comparison\n\n| Amount | Value |\n| --- | --- |\n| Original agreed-quote total, as supplied | USD 600.00 |\n| Known revised subtotal | USD 1350.00 |\n| Known price delta | USD 750.00 |\n| Full revised total | USD 1350.00 |\n| Full price delta | USD 750.00 |\n\nAll revised lines have explicit rates. Client approval and schedule feasibility still require review.\n\n## Proposed scope\n\n| Item | Quantity | Unit rate | Line amount |\n| --- | --- | --- | --- |\n| Website pages (pages) | 5 | USD 200.00 | USD 1000.00 |\n| Checkout feature (checkout) | 1 | USD 350.00 | USD 350.00 |\n\n## Changes and provided sources\n\n### pages: set_quantity\n\nQuantity: 3 → 5.\nSource reference: Synthetic client email: please make this five pages\n\nProvided rate approval reference: Synthetic agreed quote, page rate\n\n### checkout: add\n\nQuantity: 0 → 1.\nSource reference: Synthetic client email: add checkout\n\nProvided rate approval reference: Synthetic owner rate for landing capture only\n\n## Pricing questions\n\nNo pricing questions remain in the structured input.\n\n## Deadline review\n\nOriginal deadline, as supplied: Two weeks after content handoff\nProvided source: Synthetic quote, timeline paragraph\n\n- [ ] Does the expanded scope require a new deadline?\n\nSchedule feasibility has not been validated. This revision does not promise a delivery date or preserve the old deadline automatically.\n\n## Owner review\n\n- [ ] Confirm the structured changes match the client request and references.\n- [ ] Resolve missing pricing and review the deadline.\n- [ ] Obtain and record actual client approval before treating this draft as agreed.\n\nThe original quote input was preserved. This command produced a draft only; it did not send a proposal, record approval, or update a client agreement.\n"
+}

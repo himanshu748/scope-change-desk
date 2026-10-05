@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Turn a website scope change into a sourced, reviewable quote revision. Keep known amounts exact and missing prices open.">
+  <title>Scope-change Desk — give every change its own line</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/marketing.css">
+  <link rel="stylesheet" href="/scope-design.css">
+  <script type="module" src="/scope-landing.js"></script>
+</head>
+<body class="scope-page scope-landing">
+  <a class="scope-skip" href="#scope-story">Skip to Scope-change Desk</a>
+  <div class="scope-blue">
+    <header class="scope-marketing-nav scope-width">
+      <div class="scope-nameplate"><a class="scope-home" href="/">Home</a><span aria-hidden="true">/</span><a class="scope-product-name" href="/products/scope">Scope-change Desk</a></div>
+      <nav aria-label="Scope-change Desk"><a href="#how-it-works">How it works</a><a class="scope-nav-action" href="/scope">Open workspace <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></nav>
+    </header>
+  </div>
+  <main id="scope-story">
+    <div class="scope-blue">
+      <section class="scope-hero scope-width" aria-labelledby="scope-hero-title">
+        <div class="scope-hero-copy">
+          <h1 id="scope-hero-title">A small change.<br>A different quote.</h1>
+          <p>For freelancers and small studios: put the extra pages, the new checkout, and their price references into a revision you can review before agreeing to the work.</p>
+          <a href="/scope" class="scope-cta scope-cta-white">Start a real revision <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <p class="scope-hero-note">Your original quote stays intact. Each save is a new local draft.</p>
+        </div>
+        <section class="scope-specimen" aria-labelledby="sample-title">
+          <div class="scope-specimen-header"><div><h2 id="sample-title">Website revision</h2><p>Synthetic example · USD</p></div><span class="scope-document-mark" aria-hidden="true"><svg viewBox="0 0 32 40"><path d="M5 2h15l7 7v29H5zM20 2v8h7M10 17h12M10 23h12M10 29h7"/></svg></span></div>
+          <fieldset class="scope-demo-controls" disabled><legend>Try changing the request</legend><div class="scope-demo-choices"><label for="sample-pages">Website pages</label><select id="sample-pages"><option value="3">3 pages — original quote</option><option value="5" selected>5 pages — requested change</option></select></div><label class="scope-checkout-control"><input id="sample-checkout" type="checkbox" checked> Add checkout <span id="sample-pricing-state">Price not supplied</span></label>
+            <label class="scope-checkout-control scope-price-switch"><input id="sample-price-enabled" type="checkbox"> Supply an example checkout rate</label>
+            <div id="sample-price-fields" class="scope-example-price" hidden><div><label for="sample-price">Checkout unit price (USD)</label><input id="sample-price" inputmode="decimal" maxlength="24" value="350.00" aria-describedby="sample-rate-error"></div><div><label for="sample-rate-reference">Provided rate reference</label><input id="sample-rate-reference" maxlength="150" value="Synthetic owner rate — example only" aria-describedby="sample-rate-error"></div><p id="sample-rate-error" role="alert" hidden></p></div>
+          </fieldset>
+          <noscript><p class="scope-specimen-foot">This static example shows five pages and an unpriced checkout. Enable JavaScript to try a different request or supply an example rate.</p></noscript>
+          <div class="scope-specimen-table-wrap"><table class="scope-specimen-table"><caption>Proposed line items</caption><thead><tr><th scope="col">Work</th><th scope="col">Qty</th><th scope="col">Rate</th><th scope="col">Amount</th></tr></thead><tbody><tr><th scope="row">Website pages<small>Source: synthetic quote</small></th><td id="sample-quantity">5</td><td>$200</td><td id="sample-page-amount">$1,000</td></tr><tr id="sample-checkout-row"><th scope="row">Checkout<small>Source: synthetic client request</small></th><td>1</td><td id="sample-checkout-rate">—</td><td id="sample-checkout-amount" class="scope-unpriced">Unpriced</td></tr></tbody></table></div>
+          <dl class="scope-specimen-totals" aria-live="polite"><div><dt>Original quote</dt><dd>$600</dd></div><div><dt>Known price change</dt><dd id="sample-delta">+$400</dd></div><div class="scope-known-total"><dt>Known subtotal</dt><dd id="sample-subtotal">$1,000<span class="scope-ledger-rule" aria-hidden="true"></span></dd></div><div class="scope-full-total"><dt>Full revised total</dt><dd id="sample-total">Unresolved</dd></div></dl>
+          <p id="sample-question" class="scope-pricing-note"><strong>One price still needs a conversation.</strong> What rate should be agreed for checkout?</p>
+          <p class="scope-specimen-foot">All values and references are invented. A missing price is not $0. No client approval or deadline validation is recorded. This illustration saves nothing.</p>
+        </section>
+      </section>
+    </div>
+  <section class="scope-explanation scope-width" id="how-it-works" aria-labelledby="scope-explain-title">
+    <div class="scope-explanation-copy"><h2 id="scope-explain-title">Give the request<br>its own paper trail.</h2><p>A revised total is only useful when you can explain where it came from. Scope-change Desk keeps the original quote and the requested changes beside their references.</p><a class="scope-text-link" href="/scope">Work through your quote <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="scope-paper-trail"><blockquote><p id="scope-demo-message">“Could we make it five pages and add checkout?”</p><footer>Synthetic client message · follows the example above</footer></blockquote><div class="scope-trail-row"><span>Existing work</span><strong id="scope-trail-pages">3 → 5 website pages</strong><p>The original $200 unit rate carries forward.</p></div><div class="scope-trail-row" id="scope-trail-checkout"><span>New work</span><strong>Checkout, quantity 1</strong><p id="scope-trail-rate">The new line stays unpriced until you provide a rate and its reference.</p></div><div class="scope-trail-row"><span>Owner review</span><strong>A draft, ready to discuss</strong><p>Review the amount, open pricing questions, and deadline questions before approval.</p></div></div>
+  </section>
+  <section class="scope-proof scope-width" aria-labelledby="scope-proof-title">
+    <figure class="scope-proof-figure">
+      <picture class="product-evidence-picture"><source media="(max-width: 600px)" srcset="/product-evidence/scope-local-draft-mobile.png" width="318" height="320"><img src="/product-evidence/scope-local-draft-desktop.png" width="525" height="324" loading="lazy" decoding="async" alt="Actual Scope-change Desk review ledger: the original USD 600 quote becomes a USD 1350 draft after five pages and an explicitly supplied USD 350 checkout rate." data-evidence-image></picture>
+      <p class="evidence-image-fallback" hidden>The review screenshot could not load. The saved amounts and review status remain readable below and in the draft download.</p>
+      <figcaption>Actual local review ledger · new manual save with synthetic inputs. Captured on 4 October 2026. No model interpreted this example.</figcaption>
+      <details class="scope-record-text"><summary>Read the saved amounts and review status</summary><dl><div><dt>Original quote</dt><dd>USD 600.00</dd></div><div><dt>Five pages at USD 200.00</dt><dd>USD 1000.00</dd></div><div><dt>Checkout with supplied example rate</dt><dd>USD 350.00</dd></div><div><dt>Full revised draft total</dt><dd>USD 1350.00</dd></div></dl><p>Client approval: not recorded. Schedule: not validated. The actual saved JSON retains the original inputs, requested changes, references and review document.</p></details>
+    </figure>
+    <div class="scope-proof-copy"><h2 id="scope-proof-title">A draft you can<br>reopen and explain.</h2><p>This is the working desk, after an owner supplies an example checkout rate and saves a new revision. The amount is resolved; the agreement still needs review.</p><dl class="scope-saved-story"><div><dt>The baseline</dt><dd>Keep the original three-page quote and its rate reference.</dd></div><div><dt>The revision</dt><dd>Reopen saved inputs. Edits become another draft, with their own version.</dd></div><div><dt>The conversation</dt><dd>Review pricing, timing and client approval before treating the draft as agreed.</dd></div></dl><a href="/product-evidence/scope-local-draft.json" download class="scope-text-link">Download this saved synthetic draft <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </section>
+  <section class="scope-method" aria-labelledby="scope-method-title"><div class="scope-width scope-method-layout"><h2 id="scope-method-title">Interpret the message.<br>Check the numbers.<br>Keep the versions.</h2><div class="scope-method-copy"><p>The manual desk works locally. Optional NVIDIA Nemotron message interpretation through Nebius has implemented adapters; actual live sponsor proof is unverified.</p><p>With verified access and server configuration, explicitly approve sending selected quote fields and a client message. Review every suggested change and its literal citation before applying it. Added work stays unpriced until you supply a rate.</p><div class="scope-output-row"><span>Take it with you</span><strong>Markdown draft <span aria-hidden="true">/</span> JSON inputs</strong></div><p class="scope-fine-print">Opening this page sends nothing to a provider. The desk sends nothing to a client, records no client approval, and does not validate the schedule.</p></div></div></section>
+  <section class="scope-close scope-width"><h2>Make the change<br>clear before it grows.</h2><a href="/scope" class="scope-cta scope-cta-blue">Open Scope-change Desk <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></section>
+  </main>
+  <footer class="scope-marketing-footer scope-width"><a href="/">Home</a><span>Scope-change Desk</span><a href="/scope">Open workspace</a></footer>
+</body>
+</html>

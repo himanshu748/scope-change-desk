@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Scope-change Desk · Home</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/scope-design.css">
+  <script type="module" src="/scope.js"></script>
+</head>
+<body class="scope-page scope-workspace">
+  <a class="skip-link" href="#scope-main">Skip to Scope-change Desk</a>
+  <div class="app-shell">
+    <header class="app-header">
+      <a href="/" class="brand">Home</a>
+      <nav class="project-nav" aria-label="Scope-change Desk">
+        <a href="/products/scope">About this desk</a>
+        <a href="/scope" aria-current="page">Workspace</a>
+      </nav>
+    </header>
+    <main class="workspace stack" id="scope-main">
+      <div class="scope-workspace-intro">
+        <div>
+        <h1>Scope-change Desk</h1>
+        <p>Keep the original quote, the new request, and the revised numbers in one place.</p>
+        </div>
+        <ol class="scope-workflow" aria-label="Revision workflow"><li>Enter the quote</li><li>Record the changes</li><li>Review the draft</li></ol>
+      </div>
+      <div class="scope-workspace-bar">
+        <nav class="scope-section-nav" aria-label="Workspace sections"><a href="#editor-heading">Edit quote</a><a href="#preview-heading">Review</a><a href="#history-heading">Saved drafts</a></nav>
+        <p id="scope-input-state" role="status">New revision · not saved</p>
+      </div>
+      <div id="scope-notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <div class="two-column scope-ledger-layout">
+        <section class="panel stack scope-editor" aria-labelledby="editor-heading">
+          <div class="section-heading">
+            <h2 id="editor-heading" tabindex="-1">Quote and changes</h2>
+            <button class="button secondary" type="button" id="scope-example">Load synthetic example</button>
+          </div>
+          <p class="muted" id="example-note">Start with your own quote, or try the invented three-page website example.</p>
+          <form id="scope-form" class="stack">
+            <div class="field"><label for="draft-title">Draft title</label><input id="draft-title" name="title" maxlength="150" required placeholder="Website scope revision"></div>
+            <fieldset class="stack">
+              <legend>Original quote</legend>
+              <div class="form-grid">
+                <div class="field"><label for="quote-id">Quote ID</label><input id="quote-id" name="quoteId" maxlength="80" required placeholder="website-01"></div>
+                <div class="field"><label for="currency">Currency code</label><input id="currency" name="currency" value="USD" maxlength="3" pattern="[A-Z]{3}" required></div>
+                <div class="field"><label for="currency-digits">Decimal places</label><select id="currency-digits" name="digits"><option value="0">0</option><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option></select></div>
+              </div>
+              <div class="field"><label for="quote-source">Original quote source</label><input id="quote-source" name="quoteSource" maxlength="4000" required placeholder="Agreed quote, document name and date"></div>
+              <p class="muted">Enter unit prices in currency amounts, such as 200.00. Decimal places are explicit; the currency code is not checked against a registry.</p>
+              <div id="baseline-items" class="stack"></div>
+              <button class="button secondary" type="button" id="add-baseline">Add quote item</button>
+              <div class="form-grid">
+                <div class="field"><label for="deadline">Original deadline (optional)</label><input id="deadline" name="deadline" maxlength="500" placeholder="As written in the quote"></div>
+                <div class="field"><label for="deadline-source">Deadline source</label><input id="deadline-source" name="deadlineSource" maxlength="4000" placeholder="Required when a deadline is supplied"></div>
+              </div>
+            </fieldset>
+            <fieldset class="stack">
+              <legend>Requested changes</legend>
+              <div class="form-grid">
+                <div class="field"><label for="request-id">Request ID</label><input id="request-id" name="requestId" maxlength="80" required placeholder="change-01"></div>
+                <div class="field"><label for="change-source">Change request source</label><input id="change-source" name="changeSource" maxlength="4000" required placeholder="Client email, date and subject"></div>
+              </div>
+              <p class="muted">Use one change per item. Existing item IDs must match the original quote.</p>
+              <datalist id="existing-item-ids"></datalist>
+              <div id="scope-changes" class="stack"></div>
+              <button class="button secondary" type="button" id="add-change">Add requested change</button>
+              <div class="field"><label for="deadline-questions">Open deadline questions (one per line, optional)</label><textarea id="deadline-questions" name="deadlineQuestions" rows="3" maxlength="80000" placeholder="Can the expanded scope meet the original deadline?"></textarea></div>
+            </fieldset>
+            <div class="actions scope-save-actions">
+              <button class="button secondary" type="submit" name="intent" value="preview" id="preview-scope">Preview revision</button>
+              <button class="button primary" type="submit" name="intent" value="save" id="save-scope">Save new draft</button>
+            </div>
+            <p class="muted">Each save creates a separate local version. Nothing is sent to a client.</p>
+          </form>
+        </section>
+        <section class="panel stack scope-review" aria-labelledby="preview-heading" data-revision-state="empty">
+          <div class="scope-review-heading"><h2 id="preview-heading" tabindex="-1">Revision preview</h2><span>For owner review</span></div>
+          <div id="scope-preview" class="stack" aria-live="polite"><p class="muted">Enter the quote and changes, then preview to see the known amounts and unresolved questions.</p></div>
+          <div class="actions">
+            <button class="button secondary" id="download-markdown" type="button" disabled>Download Markdown</button>
+            <button class="button secondary" id="download-json" type="button" disabled>Download JSON</button>
+          </div>
+          <p class="muted" id="scope-download-note">Downloads become available after saving a draft.</p>
+        </section>
+      </div>
+      <section class="panel stack scope-model" aria-labelledby="scope-model-heading">
+        <h3 id="scope-model-heading">Interpret a client message with Nemotron</h3>
+        <p id="scope-provider" class="muted">Checking the configured inference destination…</p>
+        <div class="field"><label for="client-message">Client change message</label><textarea id="client-message" rows="4" maxlength="16000" placeholder="Please make the website five pages and add a checkout feature."></textarea></div>
+        <p class="muted">Sends only the baseline item IDs, descriptions and quantities above, plus this message. Prices, rate references and other files stay local. New items remain unpriced until you supply a rate.</p>
+        <label><input id="scope-inference-consent" type="checkbox"> Send these fields to the displayed inference provider for this interpretation.</label>
+        <button type="button" id="interpret-scope" class="button secondary" disabled>Interpret selected quote and message</button>
+        <div id="scope-interpretation" class="stack" hidden></div>
+        <button type="button" id="apply-interpretation" class="button secondary" disabled>Use reviewed suggested changes</button>
+      </section>
+      <section class="panel stack scope-history-panel" aria-labelledby="history-heading">
+        <div class="section-heading"><h2 id="history-heading" tabindex="-1">Saved drafts</h2><button type="button" class="button secondary" id="refresh-scope">Refresh history</button></div>
+        <p class="muted">Open a draft to review its original inputs. Editing and saving creates a new version.</p>
+        <div id="scope-history" class="stack" aria-live="polite"><p class="muted">Loading saved drafts…</p></div>
+      </section>
+      <footer class="scope-workspace-footer"><p>Rates and references come from you. Client approval and schedule feasibility still need review.</p><a href="/products/scope">About Scope-change Desk</a></footer>
+    </main>
+  </div>
+</body>
+</html>
