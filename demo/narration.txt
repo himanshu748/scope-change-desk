@@ -1,0 +1,14 @@
+The client asked for five pages and checkout. The agreed quote covered three pages.
+
+Scope-change Desk keeps the original quote beside the new request. In this synthetic example, the known page subtotal increases from six hundred to one thousand dollars. Checkout has no agreed rate, so the full total stays unresolved.
+
+NVIDIA Nemotron on Nebius Token Factory reads the selected client message and the original item descriptions and quantities. It proposes changes with literal quotes from the message. Prices and financial references stay outside that inference payload.
+
+I review the suggested changes before applying them. If the request is ambiguous, the interpretation asks a question. New work still needs a supplied rate and reference; the model cannot approve a price.
+
+I use Tavily to retrieve documentation for the requested integration. After inspecting and selecting passages, I ask Nemotron for a cited scope-review checklist. I can trace each check back to its source. This research cannot set my rate or establish client approval.
+
+After I enter a rate, integer arithmetic calculates the revision. I save it as a separate draft, reopen it, and download the preserved inputs and revision. The original agreement remains available.
+
+This is a review workflow for freelancers. A saved draft does not mean the client approved it, and the app does not promise a delivery date or send the client a message.
+

@@ -9,7 +9,10 @@
     "pretest": "npm run check",
     "test": "node --test --test-concurrency=1 test/*.test.js",
     "test:smoke": "node --test --test-concurrency=1 test/standaloneServer.test.js test/standaloneBrowser.test.js",
-    "scope": "node src/scope/cli.js"
+    "scope": "node src/scope/cli.js",
+    "preflight:tokenfactory": "node src/integrations/preflight.js",
+    "preflight:tokenfactory:chat": "node src/integrations/preflight.js --chat",
+    "narration": "node scripts/deepgram_narration.mjs"
   },
   "engines": {
     "node": ">=22"
